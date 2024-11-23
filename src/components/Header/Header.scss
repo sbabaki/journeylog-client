@@ -1,0 +1,97 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-background-medium;
+  padding: 0 $padding-standard-mobile;
+
+  @include tablet {
+    flex-direction: row;
+    padding-inline: $padding-standard-tablet;
+    gap: 1.5rem;
+  }
+
+  @include desktop {
+    padding-inline: $padding-standard-desktop;
+  }
+
+  &__box1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-block: $padding-standard-mobile;
+    flex-wrap: wrap;
+  }
+
+  &__logo {
+    width: 7rem;
+  }
+
+  &__profile-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__profile-icon {
+    width: 1.5rem;
+  }
+
+  &__box2 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+    justify-content: space-around;
+    padding-bottom: 0.4rem;
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+
+  &__link-container {
+    width: auto;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+    text-align: center;
+  }
+
+  &__link-text {
+    color: $color-text-light;
+
+    &:hover {
+      color: $color-nav-select;
+      font-weight: $font-weight-demi;
+    }
+  }
+
+  &__box3 {
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+
+    @include tablet {
+      width: 20rem;
+    }
+  }
+
+  &__button-link {
+    text-decoration: none;
+    width: 100%;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+}

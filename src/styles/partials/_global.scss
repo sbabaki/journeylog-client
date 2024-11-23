@@ -1,0 +1,71 @@
+@use "../partials/mixins" as *;
+@use "../partials/variables" as *;
+@use "../partials/typography" as *;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'League Spartan', sans-serif;
+}
+
+h1 {
+  font-size: 1.7rem;
+  line-height: 2rem;
+  font-weight: $font-weight-bold;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+
+  @include tablet {
+    font-size: 2.0625rem;
+    line-height: 2.75rem;
+    font-weight: $font-weight-bold;
+    padding-top: 2.25rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+h2 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: $font-weight-bold;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+
+  @include tablet {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: $font-weight-bold;
+    padding-top: 2.25rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+h3 {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: $font-weight-bold;
+
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: $font-weight-bold;
+  }
+}
+
+p {
+  font-size: 0.9rem;
+  line-height: 1.125rem;
+  font-weight: $font-weight-regular;
+
+  @include tablet {
+    size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: $font-weight-regular;
+  }
+}
+

@@ -1,18 +1,24 @@
+import "./App.scss";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.scss";
+import Header from "./components/Header/header";
+import Homepage from "./pages/Homepage/homepage";
+import NewLogPage from "./pages/NewLogPage/NewLogPage";
+import LogDetailsPage from "./pages/LogDetailsPage/logdetailspage";
+import JourneyMapPage from "./pages/JourneyMapPage/JourneyMapPage";
 
 function App() {
-
-
   return (
     <>
-      <BrowserRouter>
-        <Navigation />
+      <BrowserRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
+        <Header />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/log/:logId?" element={<LogDetailsPage />} />
+          <Route path="/your-log" element={<LogDetailsPage />} />
           <Route path="/new-log" element={<NewLogPage />} />
+          <Route path="/journey-map" element={<JourneyMapPage />} />
         </Routes>
       </BrowserRouter>
     </>

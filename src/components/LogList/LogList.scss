@@ -1,0 +1,36 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.log-list {
+  background-color: $color-backgound-log-list;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: $divider;
+
+  &__item {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__item-left {
+    justify-content: center;
+  }
+
+  &__thumbnail {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+  }
+
+  &__item-right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}
