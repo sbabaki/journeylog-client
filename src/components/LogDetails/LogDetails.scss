@@ -1,2 +1,150 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+
+.log-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+
+
+  }
+
+  &__add-btn {
+    @include button;
+    display: flex;
+    height: 100%;
+
+  }
+
+  &__btn-txt {
+    display: none;
+    @include tablet {
+      display: inline;
+    }
+  }
+
+
+
+  &__btn-icon {
+    @include icon;
+    color: $color-background-light;
+  }
+
+
+&__city {
+  width: 95%;
+
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  align-items: flex-start;
+  &:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+}
+
+&__city-top {
+  text-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: flex-end;
+  width: 100%;
+  aspect-ratio: 16 /9;
+
+
+}
+
+&__city-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  z-index: 0;
+  border-radius: inherit;
+}
+
+&__city-img {
+  position: absolute;
+  aspect-ratio: 16 /9;
+  width: 100%;
+  
+}
+
+&__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, .5) 80%, rgba(0, 0, 0, 0));
+  z-index: -1;
+}
+
+&__city-info {
+  position: relative;
+  z-index: 1;
+  color: $color-background-light;
+  z-index: 2;
+  padding: $padding-standard-mobile $padding-standard-mobile 0.5rem $padding-standard-mobile
+
+}
+
+&__city-date {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+&__calendar-icon {
+  @include icon;
+}
+
+&__h2 {
+  padding-block: 0;
+}
+
+&__city-bottom {
+  padding: $padding-standard-mobile;
+}
+
+}
+
+
+
+// .star-rating {
+//     display: flex;
+//     align-items: center;
+//     gap: 0.2rem;
+  
+//     .star {
+//       font-size: 1.2rem;
+//       color: #f6d799;
+//     }
+  
+//     .full-star {
+//       color: #f6d799;
+//     }
+  
+//     .half-star {
+//       color: #f6d799;
+//     }
+  
+//     .empty-star {
+//       color: #dcdcdc;
+//     }
+//   }
+  

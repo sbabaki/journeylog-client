@@ -8,6 +8,10 @@ import LogDetailsPage from "./pages/LogDetailsPage/logdetailspage";
 import JourneyMapPage from "./pages/JourneyMapPage/JourneyMapPage";
 
 function App() {
+
+
+
+  
   return (
     <>
       <BrowserRouter
