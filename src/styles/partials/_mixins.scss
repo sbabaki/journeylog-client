@@ -36,6 +36,23 @@
   }
 }
 
+@mixin button-cancel {
+  @include button;
+  color: $color-text-light;
+  background-color: $color-background-light;
+  border: $color-text-light solid 1px;
+  &:hover {
+    background-color: $color-background-light;
+  }
+}
+
 @mixin icon {
   width: 1.3rem;
+}
+
+@mixin flexbox($justify: flex-start, $align: flex-start, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
 }

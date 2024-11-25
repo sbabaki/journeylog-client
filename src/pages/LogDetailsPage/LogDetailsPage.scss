@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-inline: $padding-standard-mobile;
 
     &__list {
         padding: $padding-standard-mobile;
