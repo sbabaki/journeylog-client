@@ -4,6 +4,11 @@
 .new-log {
   padding: $padding-standard-mobile;
 
+  &__cities-header {
+    @include flex (space-between, center);
+    padding-bottom: $padding-standard-mobile;
+  }
+
   &__label-field {
     @include flex($direction: column);
     width: 100%;

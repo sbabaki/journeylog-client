@@ -30,14 +30,11 @@ h2 {
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: $font-weight-bold;
-  padding-bottom: 0.5rem;
 
   @include tablet {
     font-size: 0.75rem;
     line-height: 1.25rem;
     font-weight: $font-weight-bold;
-    padding-top: 2.25rem;
-    padding-bottom: 1.5rem;
   }
 }
 
