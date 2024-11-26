@@ -9,6 +9,7 @@ export default function NewLogPage() {
 
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [cities, setCities] = useState([]);
 
 
   return (
