@@ -9,6 +9,34 @@
   align-items: center;
   padding: $padding-standard-mobile;
 
+  &__top {
+    width: 100%;
+    @include flex(space-between, center);
+    padding: 0 $padding-standard-mobile $padding-standard-mobile $padding-standard-mobile;
+  }
+
+
+  &__h2 {
+    padding: 0;
+  }
+
+  &__add-btn {
+    @include button;
+    display: flex;
+  }
+
+  &__btn-txt {
+    display: none;
+    @include tablet {
+      display: inline;
+    }
+  }
+
+  &__btn-icon {
+    width: 1rem;
+    color: $color-background-light;
+  }
+
   &__items {
     width: 95%;
   }
@@ -17,10 +45,10 @@
     list-style: none;
     display: flex;
     gap: 1rem;
-    padding: .3rem .5rem;
+    padding: 0.3rem 0.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     text-decoration: none;
     background-color: white;
     transition: box-shadow 0.3s ease;

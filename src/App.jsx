@@ -21,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/your-log" element={<LogDetailsPage />} />
+          <Route path="/your-log/:logId" element={<LogDetailsPage />} />
           <Route path="/new-log" element={<NewLogPage />} />
           <Route path="/journey-map" element={<JourneyMapPage />} />
         </Routes>

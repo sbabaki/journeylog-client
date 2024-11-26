@@ -16,26 +16,7 @@
 
   }
 
-  &__add-btn {
-    @include button;
-    display: flex;
-    height: 100%;
 
-  }
-
-  &__btn-txt {
-    display: none;
-    @include tablet {
-      display: inline;
-    }
-  }
-
-
-
-  &__btn-icon {
-    @include icon;
-    color: $color-background-light;
-  }
 
 
 &__city {

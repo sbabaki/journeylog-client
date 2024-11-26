@@ -1,11 +1,18 @@
 import React from "react";
 import "./LogList.scss";
 import { Link } from "react-router-dom";
+import plusIcon from "../../assets/icons/plus-icon.png"
 
 function LogList({logList}) {
   return (
     <section className="log-list">
+      <div className="log-list__top">
       <h2 className="log-list__h2">Your Logs</h2>
+      <button className="log-list__add-btn">
+            <img src={plusIcon} alt="plus-icon" className="log-list__btn-icon" />
+            <p className="log-list__btn-txt">Add New Log</p>
+          </button>
+          </div>
       <ul className="log-list__items">
         {logList.map((log)=> (
         <Link to={`/your-log/${log.id}`} className="log-list__link" key={log.id}>
