@@ -1,6 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
+
 .hero {
   display: flex;
   position: relative;
@@ -39,5 +40,57 @@
 
   &__button {
     @include button;
+  }
+}
+
+.body {
+  padding: $padding-standard-mobile;
+  background-color: $color-background-light;
+  @include flex (center, center, column);
+  text-align: center;
+
+  &__intro {
+    padding-block: $padding-standard-mobile
+  }
+
+  &__feature {
+    @include flex (center, center, column);
+    padding: $padding-standard-mobile;
+    gap: $padding-standard-mobile;
+    background-color: white;
+    border-radius: 10%;
+    margin: $padding-standard-mobile;
+    max-width: 15rem;
+    text-align: center;
+
+  }
+
+  &__icon {
+    @include icon;
+    height: 50px;
+    width: 50px;
+  }
+
+  &__icon-bkgrnd {
+    @include flex (center, center, row);
+    background-color: $color-text-light;
+    padding: 1rem;
+    border-radius: 10%;
+    width: 5rem;
+    height: 5rem;
+  }
+
+
+  &__cta {
+    @include flex (left, center, row);
+    padding: $padding-standard-mobile
+  }
+  &__cta-btn {
+    @include button;
+  }
+
+  &__cta-content {
+    text-align: left;
+    max-width: 15rem;
   }
 }

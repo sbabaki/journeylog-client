@@ -1,0 +1,48 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.footer {
+  background-color: $color-background-medium;
+  color: $color-text-light;
+  padding: $padding-standard-mobile;
+  text-align: center;
+
+  &__container {
+    @include flex (space-between, center);
+    gap: .5rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+  }
+
+  &__brand {
+    @include flex(left, left, column);
+    flex: 1;
+    text-align: left;
+  }
+
+  &__logo {
+    @include logo;
+  }
+
+  &__links {
+    flex: 1;
+    text-align: center;
+
+    .footer__link {
+      color: $color-text-light;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 0.9rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: 10px;
+    font-size: 0.8rem;
+  }
+}

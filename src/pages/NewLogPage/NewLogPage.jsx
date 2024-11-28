@@ -5,6 +5,9 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useJsApiLoader, Autocomplete } from "@react-google-maps/api";
+
+
 
 export default function NewLogPage({ setLogList }) {
   const [startDate, setStartDate] = useState(null);
@@ -12,9 +15,27 @@ export default function NewLogPage({ setLogList }) {
   const [city, setCity] = useState("");
   const [note, setnote] = useState("");
   const [logName, setLogName] = useState("");
+  const [coordinates, setCoordinates] = useState({ latitude: null, longitude: null });
   const [successMessage, setSuccessMessage] = useState("");
+
   const navigate = useNavigate();
   const apiUrl = import.meta.env.VITE_API_URL;
+  const autocompleteRef = useRef(null);
+
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: "hip-cyclist-443122-i7",
+    libraries: ["places"],
+  });
+
+  const handlePlaceChanged = () => {
+const place = autocompleteRef.current.getPlace();
+if (place.geometry) {
+  setCity (place.name);
+  setCoordinates ({
+    latitude:
+  })
+}
+  }
 
   const handleOnSubmit = async (event) => {
     event.preventDefault();
@@ -27,6 +48,7 @@ export default function NewLogPage({ setLogList }) {
       cities: [
         {
           city: city,
+          coordinates,
           startDate,
           endDate,
           note,

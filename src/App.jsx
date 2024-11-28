@@ -2,6 +2,7 @@ import "./App.scss";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/header";
+import Footer from "./components/Footer/Footer";
 import Homepage from "./pages/Homepage/homepage";
 import NewLogPage from "./pages/NewLogPage/NewLogPage";
 import LogDetailsPage from "./pages/LogDetailsPage/logdetailspage";
@@ -25,6 +26,7 @@ function App() {
           <Route path="/new-log" element={<NewLogPage />} />
           <Route path="/journey-map" element={<JourneyMapPage />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   );
