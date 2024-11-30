@@ -28,6 +28,7 @@
   &__links {
     flex: 1;
     text-align: center;
+    @include flex (center, center, row);
 
     .footer__link {
       color: $color-text-light;

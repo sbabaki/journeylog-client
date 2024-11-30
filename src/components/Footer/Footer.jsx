@@ -13,9 +13,15 @@ export default function Footer() {
           <p>Your virtual travel map.</p>
         </div>
         <div className="footer__links">
-          <a href="/about" className="footer__link">About</a>
-          <a href="/contact" className="footer__link">Contact</a>
-          <a href="/privacy" className="footer__link">Privacy Policy</a>
+          <div>
+          <a href="/" className="footer__link">About</a>
+          </div>
+          <div>
+          <a href="/" className="footer__link">Contact</a>
+          </div>
+          <div>
+          <a href="/" className="footer__link">Privacy Policy</a>
+          </div>
         </div>
       </div>
       <div className="footer__copyright">

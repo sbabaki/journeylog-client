@@ -22,7 +22,7 @@ function header() {
         </div>
         <div className="header__box2">
           <div className="header__link-container">
-            <Link to={"/your-log"} className="header__link">
+            <Link to={"/your-logs"} className="header__link">
               <p className="header__link-text">Your Logs</p>
             </Link>
           </div>

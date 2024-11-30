@@ -1,13 +1,13 @@
 import React from "react";
 import "./NewLogPage.scss";
 import "react-datepicker/dist/react-datepicker.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import DatePicker from "react-datepicker";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useJsApiLoader, Autocomplete } from "@react-google-maps/api";
 
-
+const libraries = ["places"];
 
 export default function NewLogPage({ setLogList }) {
   const [startDate, setStartDate] = useState(null);
@@ -15,7 +15,10 @@ export default function NewLogPage({ setLogList }) {
   const [city, setCity] = useState("");
   const [note, setnote] = useState("");
   const [logName, setLogName] = useState("");
-  const [coordinates, setCoordinates] = useState({ latitude: null, longitude: null });
+  const [coordinates, setCoordinates] = useState({
+    latitude: null,
+    longitude: null,
+  });
   const [successMessage, setSuccessMessage] = useState("");
 
   const navigate = useNavigate();
@@ -23,19 +26,24 @@ export default function NewLogPage({ setLogList }) {
   const autocompleteRef = useRef(null);
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "hip-cyclist-443122-i7",
-    libraries: ["places"],
+    googleMapsApiKey: "AIzaSyBdkXvPdOX8sdg2ZAsLjWiUHrGeS0Mxt6Y",
+    libraries,
   });
 
-  const handlePlaceChanged = () => {
-const place = autocompleteRef.current.getPlace();
-if (place.geometry) {
-  setCity (place.name);
-  setCoordinates ({
-    latitude:
-  })
-}
+  if (!isLoaded) {
+    return <div>Loading Google Maps...</div>;
   }
+
+  const handlePlaceChanged = () => {
+    const place = autocompleteRef.current.getPlace();
+    if (place.geometry) {
+      setCity(place.name);
+      setCoordinates({
+        latitude: place.geometry.location.lat(),
+        longitude: place.geometry.location.lng(),
+      });
+    }
+  };
 
   const handleOnSubmit = async (event) => {
     event.preventDefault();
@@ -58,10 +66,10 @@ if (place.geometry) {
     console.log("Data being sent to backend:", logData);
 
     try {
-      const response = await axios.post(`${apiUrl}/your-log`, logData);
+      const response = await axios.post(`${apiUrl}/your-logs`, logData);
       console.log("Response from backend:", response.data);
       alert(`Your log has been created!`);
-      navigate("/your-log");
+      navigate("/your-logs");
     } catch (error) {}
   };
 
@@ -78,6 +86,7 @@ if (place.geometry) {
               className="new-log__input"
               name="log-name"
               value={logName}
+              autoComplete="off"
               onChange={(event) => {
                 setLogName(event.target.value);
                 console.log("Log Name:", event.target.value);
@@ -97,13 +106,19 @@ if (place.geometry) {
             <label htmlFor="city-name">City Name:</label>
           </div>
           <div className="new-log__input-container">
-            <input
-              className="new-log__input"
-              name="city-name"
-              onChange={(event) => setCity(event.target.value)}
-              placeholder="Enter city name"
-              type="text"
-            />
+            <Autocomplete
+              onLoad={(autocomplete) =>
+                (autocompleteRef.current = autocomplete)
+              }
+              onPlaceChanged={handlePlaceChanged}
+            >
+              <input
+                className="new-log__input"
+                name="city-name"
+                placeholder="Enter city name"
+                type="text"
+              />
+            </Autocomplete>
           </div>
         </div>
 
@@ -134,6 +149,7 @@ if (place.geometry) {
               className="new-log__input"
               placeholderText="Select start date"
               popperPlacement="bottom-start"
+              autoComplete="off"
             />
           </div>
         </div>
@@ -150,6 +166,7 @@ if (place.geometry) {
               className="new-log__input"
               placeholderText="Select end date"
               popperPlacement="bottom-start"
+              autoComplete="off"
             />
           </div>
         </div>

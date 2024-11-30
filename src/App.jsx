@@ -9,10 +9,6 @@ import LogDetailsPage from "./pages/LogDetailsPage/logdetailspage";
 import JourneyMapPage from "./pages/JourneyMapPage/JourneyMapPage";
 
 function App() {
-
-
-
-  
   return (
     <>
       <BrowserRouter
@@ -21,12 +17,12 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/your-log" element={<LogDetailsPage />} />
-          <Route path="/your-log/:logId" element={<LogDetailsPage />} />
+          <Route path="/your-logs" element={<LogDetailsPage />} />
+          <Route path="/your-logs/:logId" element={<LogDetailsPage />} />
           <Route path="/new-log" element={<NewLogPage />} />
           <Route path="/journey-map" element={<JourneyMapPage />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </>
   );

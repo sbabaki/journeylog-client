@@ -3,6 +3,7 @@ import "../LogDetailsPage/LogDetailsPage.scss";
 import LogList from "../../components/LogList/LogList";
 import LogDetails from "../../components/LogDetails/LogDetails";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 export default function LogDetailsPage() {
   const [logList, setLogList] = useState([]);
@@ -14,21 +15,20 @@ export default function LogDetailsPage() {
   useEffect(() => {
     async function fetchLogs() {
       try {
-        const response = await fetch(`${apiUrl}/your-log`);
-        if (!response.ok) throw new Error("Failed to fetch logs.");
-        const data = await response.json();
+        const response = await axios.get(`${apiUrl}/your-logs`);
+        const data = response.data;
         setLogList(data);
-
+  
         const selectedLog = data.find((log) => log.id === logId);
         console.log("logId from URL:", logId);
         console.log("Logs fetched from backend:", data);
         setCurrentLog(selectedLog || null);
-        console.log("Current Log Details:", currentLog);
-
+        console.log("Current Log Details:", selectedLog);
       } catch (error) {
         console.error("Error fetching logs:", error);
       }
     }
+  
     fetchLogs();
   }, [apiUrl, logId]);
 
