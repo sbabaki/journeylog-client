@@ -14,35 +14,40 @@
 }
 
 @mixin button {
-  background-color: $color-text-light;
+  background: linear-gradient(135deg, $color-text-colored, lighten($color-text-colored, 10%));
   color: $color-background-light;
   font-size: $font-size-button;
   font-weight: $font-weight-demi;
-  padding: 0.5rem .5rem;
-  border: none;
-  border-radius: 1rem;
-  box-shadow: none;
+  padding: 0.5rem .7rem;
+  border: 2px solid darken($color-background-medium, 10%);
+  border-radius: 1.5rem;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+
   &:hover {
-    background-color: $color-nav-select;
+    background: linear-gradient(135deg, $color-nav-select, darken($color-nav-select, 10%));
+    color: $color-background-light;
+    transform: scale(1.02);
   }
+
   &:active {
-    background-color: #165465;
-    transform: translateY(1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, darken($color-text-colored, 10%), darken($color-nav-select, 10%));
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 }
 
 @mixin button-cancel {
   @include button;
-  color: $color-text-light;
-  background-color: $color-background-light;
-  border: $color-text-light solid 1px;
+  color: $color-text-colored;
+  background:none;
+  border: $color-text-colored solid 1px;
   &:hover {
-    background-color: $color-background-light;
+background: $color-background-medium;
+color: $color-text-colored;
   }
 }
 
@@ -59,4 +64,12 @@
   justify-content: $justify;
   align-items: $align;
   flex-direction: $direction;
+}
+
+@mixin global {
+  font-family: $font-family;
+  font-size: 0.9rem;
+  @include tablet {
+    font-size: 1rem;
+  }
 }

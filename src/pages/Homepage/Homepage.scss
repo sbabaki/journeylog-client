@@ -1,7 +1,6 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-
 .hero {
   display: flex;
   position: relative;
@@ -13,13 +12,13 @@
     background-image: url("../../../public/images/homepage-hero.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     height: 100%;
     width: 100%;
   }
 
   &__overlay {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
     position: absolute;
     height: 100%;
     width: 100%;
@@ -27,16 +26,25 @@
 
   &__content {
     position: absolute;
-    width: 60%;
-    max-width: 20rem;
-    padding: $padding-standard-mobile;
+    @include flex (center, left, column);
+    padding-left: $padding-standard-mobile;
+    width: 100%;
+    max-width: 10rem;
+@include tablet{
+  padding-left: 5rem;
+  max-width: 25rem;
+}
+@include desktop {
+  padding-left: 15rem;
+  max-width: 45rem;
+}
   }
 
   &__title {
     color: white;
-    padding: 0;
-    padding-bottom: .2rem;
+    
   }
+  
 
   &__button {
     @include button;
@@ -45,24 +53,41 @@
 
 .body {
   padding: $padding-standard-mobile;
-  background-color: $color-background-light;
-  @include flex (center, center, column);
+  background-color: $color-background-medium;
+  @include flex(center, center, column);
   text-align: center;
+  @include tablet {
+    padding: $padding-standard-tablet;
+  }
+  @include desktop {
+    padding: $padding-standard-desktop;
+  }
 
   &__intro {
-    padding-block: $padding-standard-mobile
+    padding-block: $padding-standard-mobile;
+    @include flex(center, center, column);
+    gap: 1rem;
+  }
+
+  &__features {
+    @include tablet {
+      @include flex(center, center, row);
+    }
   }
 
   &__feature {
-    @include flex (center, center, column);
+    @include flex(center, center, column);
     padding: $padding-standard-mobile;
     gap: $padding-standard-mobile;
-    background-color: white;
+    background-color: $color-background-light;
     border-radius: 10%;
     margin: $padding-standard-mobile;
-    max-width: 15rem;
     text-align: center;
-
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    height: auto; 
+    max-width: 15rem; 
+    min-height: 15rem; 
   }
 
   &__icon {
@@ -72,25 +97,11 @@
   }
 
   &__icon-bkgrnd {
-    @include flex (center, center, row);
-    background-color: $color-text-light;
+    @include flex(center, center, row);
+    background-color: $color-text-colored;
     padding: 1rem;
     border-radius: 10%;
     width: 5rem;
     height: 5rem;
-  }
-
-
-  &__cta {
-    @include flex (left, center, row);
-    padding: $padding-standard-mobile
-  }
-  &__cta-btn {
-    @include button;
-  }
-
-  &__cta-content {
-    text-align: left;
-    max-width: 15rem;
   }
 }

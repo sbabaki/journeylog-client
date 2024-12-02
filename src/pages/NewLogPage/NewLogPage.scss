@@ -1,12 +1,44 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.new-log {
+
+.new-log-bkgrnd {
+    background-color: $color-background-medium;
+    padding: $padding-standard-mobile;
+    @include flex (center, center);
+    @include tablet {
+      padding: $padding-standard-tablet;
+    }
+    @include desktop {
+      padding: $padding-standard-desktop;
+    }
+    
+}
+
+.new-log-container {
+  max-width: 35rem;
+  background-color: $color-background-light;
   padding: $padding-standard-mobile;
+  width: 95%;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  @include flex (center, center);
+  @include tablet {
+    height: 40rem;
+  }
+}
+
+.new-log {
+  max-width: 25rem;
+  width: 100%;
+
+  &__title {
+    text-align: center;
+  }
 
   &__cities-header {
     @include flex (space-between, center);
-    padding-bottom: $padding-standard-mobile;
+    padding-block: $padding-standard-mobile;
   }
 
   &__label-field {
@@ -30,18 +62,30 @@
     margin-top: 0.5rem;
     padding: 0.5rem;
     height: 1.5rem;
+    @include global;
+
+    &::placeholder {
+      @include global;
+    }
+
+    &--notes {
+      height: 9rem;
+      resize: none;
+    }
   }
 
-  &__action-btns {
+  &__btns {
     width: 100%;
-    @include flex($justify: space-around);
+    @include flex(center, center);
+    padding-top: $padding-standard-mobile;
+    gap: 1rem;
   }
 
-  &__btn {
+  &__submit-btn {
     @include button;
 
-    &--cancel {
-      @include button-cancel;
-    }
+  }
+  &__cancel-btn {
+    @include button-cancel;
   }
 }

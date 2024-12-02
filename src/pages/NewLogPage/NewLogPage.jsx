@@ -74,6 +74,8 @@ export default function NewLogPage({ setLogList }) {
   };
 
   return (
+    <div className="new-log-bkgrnd">
+      <div className="new-log-container">
     <div className="new-log">
       <h1 className="new-log__title">New Log</h1>
       <form className="new-log__form" onSubmit={handleOnSubmit} action="submit">
@@ -95,7 +97,6 @@ export default function NewLogPage({ setLogList }) {
               type="text"
             />
           </div>
-          <div className="new-log__action-btns"></div>
         </div>
         <div className="new-log__cities-header">
           <h2>Add Your First City</h2>
@@ -124,11 +125,11 @@ export default function NewLogPage({ setLogList }) {
 
         <div className="new-log__label-field">
           <div className="new-log__label-container">
-            <label htmlFor="note">notes:</label>
+            <label className="new-log__label" htmlFor="note">Notes:</label>
           </div>
           <div className="new-log__input-container">
             <textarea
-              className="new-log__input"
+              className="new-log__input new-log__input--notes"
               name="note"
               onChange={(event) => setnote(event.target.value)}
               placeholder="Enter notes"
@@ -170,15 +171,19 @@ export default function NewLogPage({ setLogList }) {
             />
           </div>
         </div>
-        <button type="submit" className="new-log__btn--cancel">
+        <div className="new-log__btns">
+        <button type="submit" className="new-log__submit-btn">
           Submit
         </button>
         <Link to="/">
-          <button type="button" className="new-log__btn--cancel">
+          <button type="button" className="new-log__cancel-btn">
             Cancel
           </button>
         </Link>
+        </div>
       </form>
+    </div>
+    </div>
     </div>
   );
 }

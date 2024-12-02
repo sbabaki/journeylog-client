@@ -11,15 +11,18 @@ function Homepage() {
         <div className="hero__img"></div>
         <div className="hero__overlay"></div>
         <div className="hero__content">
-          <h1 className="hero__title">Where's Your Next Big Adventure?</h1>
+          <h1 className="hero__title">Mark Your Travel Footprint.</h1>
+          <Link to={"/new-log"}>
           <button className="hero__button">Create New Log</button>
+          </Link>
         </div>
       </section>
       <section className="body">
         <div className="body__intro">
-          <h2>Your Virtual Travel Map and More</h2>
+          <h2>Your Virtual Travel Map</h2>
           <p>JourneyLog lets you track, visualize, and share your journeys.</p>
         </div>
+        <div className="body__features">
         <div className="body__feature">
           <div className="body__icon-bkgrnd">
             <img
@@ -49,20 +52,6 @@ function Homepage() {
           <h3>Share Your Experiences</h3>
           <p>Inspire the journeys of others by sharing your logs.</p>
         </div>
-        <div className="body__cta-container">
-        <div className="body__cta">
-          <div className="body__cta-content">
-            <h2 className="body__cta-title">Start Your Journey </h2>
-            <p className="body__cta-text">
-              Pin your favorite destinations and log your adventures!
-            </p>
-          </div>
-          <Link to={"/new-log"}>
-            <button className="body__cta-btn">
-              Get Started
-            </button>
-            </Link>
-            </div>
         </div>
       </section>
     </>

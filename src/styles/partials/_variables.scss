@@ -2,17 +2,17 @@ $font-weight-regular: 400;
 $font-weight-demi: 600;
 $font-weight-bold: 700;
 
+$font-family: "League Spartan", sans-serif;
+
 $color-text-dark: #323232;
-$color-text-light: #57889e;
-$color-nav-select: #2a657e;
-$color-background-light: #f5f5f5;
-$color-background-medium: #f6d799;
-$color-divider: #ffffa6;
+$color-text-colored: #30638e;
+$color-nav-select: #003d5b;
+$color-background-medium: #f5f5f5;
+$color-background-light: white;
+$color-background-colored: #e9c46a;
 
 $padding-standard-mobile: 1rem;
 $padding-standard-tablet: 2rem;
-$padding-standard-desktop: 8rem;
+$padding-standard-desktop: 4rem;
 
-$divider: 0.15rem solid $color-divider;
-
-$font-size-button: 0.7rem;
+$font-size-button: 0.8rem;

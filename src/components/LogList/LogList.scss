@@ -2,17 +2,26 @@
 @use "../../styles/partials/variables" as *;
 
 .log-list {
-  background-color: $color-background-light;
+  background-color: $color-background-medium;
   border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex (center, center, column);
   padding: $padding-standard-mobile;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 50rem;
+  @include tablet {
+    padding: $padding-standard-tablet;
+  }
 
   &__top {
     width: 100%;
     @include flex(space-between, center);
     padding: 0 $padding-standard-mobile $padding-standard-mobile $padding-standard-mobile;
+  }
+
+  &__instr {
+    padding: 0 0 $padding-standard-mobile $padding-standard-mobile;
+    width: 100%;
   }
 
 
@@ -25,8 +34,15 @@
     display: flex;
   }
 
+  &__btn-link{
+    text-decoration: none;
+    
+
+  }
+
   &__btn-txt {
     display: none;
+    font-size: $font-size-button;
     @include tablet {
       display: inline;
     }
@@ -39,25 +55,31 @@
 
   &__items {
     width: 95%;
+    @include flex (center, center, column);
+    gap: .5rem;
   }
 
   &__item {
-    list-style: none;
-    display: flex;
+    @include flex (left, left);
     gap: 1rem;
     padding: 0.3rem 0.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 0.5rem;
-    text-decoration: none;
     background-color: white;
     transition: box-shadow 0.3s ease;
     color: $color-text-dark;
+    width: 100%;
+    max-width: 30rem;
+    
     &:hover {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
     &:focus {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    @include tablet {
+      padding-left: $padding-standard-tablet;
     }
   }
 
@@ -78,5 +100,11 @@
 
   &__link {
     text-decoration: none;
+    width: 100%;
+    @include flex (center, center, column);
+    @include tablet {
+
+    
+    }
   }
 }

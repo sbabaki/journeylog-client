@@ -45,7 +45,7 @@ export default function LogDetailsPage() {
         {currentLog ? (
           <LogDetails name={currentLog.name} cities={currentLog.cities} startDate={currentLog.startDate} endDate={currentLog.endDate} note={currentLog.note} />
         ) : (
-          <p>Select a log to view its details.</p>
+          ""
         )}
       </div>
     </div>

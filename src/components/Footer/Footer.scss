@@ -3,16 +3,27 @@
 @use "../../styles/partials/mixins" as *;
 
 .footer {
-  background-color: $color-background-medium;
-  color: $color-text-light;
+  background-color: $color-background-colored;
+  color: $color-text-colored;
   padding: $padding-standard-mobile;
   text-align: center;
+  @include flex (center, center, column);
+  @include tablet {
+    padding-inline: $padding-standard-tablet;
+  }
+  @include desktop {
+    padding-inline: $padding-standard-desktop;
+  }
 
   &__container {
-    @include flex (space-between, center);
-    gap: .5rem;
+    @include flex(space-between, center, column);
+    gap: 0.5rem;
     flex-wrap: wrap;
-    max-width: 1200px;
+    @include tablet {
+      width: 100%;
+      flex-direction: row;
+      padding-inline: $padding-standard-tablet;
+    }
   }
 
   &__brand {
@@ -28,12 +39,17 @@
   &__links {
     flex: 1;
     text-align: center;
-    @include flex (center, center, row);
+    @include flex(center, center, row);
+    gap: 1rem;
+    padding-block: $padding-standard-mobile;
+
+    @include tablet {
+      justify-content: right;
+    }
 
     .footer__link {
-      color: $color-text-light;
+      color: $color-text-colored;
       text-decoration: none;
-      margin: 0 10px;
       font-size: 0.9rem;
 
       &:hover {
