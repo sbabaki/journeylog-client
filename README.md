@@ -51,22 +51,22 @@ Server-Side
 
 - Home Page
 - New Log Page
-- Log Details
+- Log Details Page
 - Map Page
 
 ### Mockups
 
 #### Home Page
-![](./assets/wireframes/homepage.jpg)
+![](src/assets/wireframes/homepage.jpg)
 
 #### Map Page
-![](./assets/wireframes/journey-map.jpg)
+![](src/assets/wireframes/journey-map.jpg)
 
 #### Log Page
-![](./assets/wireframes/journey-log.jpg)
+![](src/assets/wireframes/journey-log.jpg)
 
 #### Add New Log Page
-![](./assets/wireframes/add-new-log.jpg)
+![](src/assets/wireframes/add-new-log.jpg)
 
 ### Data
 
@@ -177,18 +177,18 @@ JourneyMap
 
 ## Roadmap
 
-Create Client
-Create server
-Connect client and server
-Build framework and styling for navigation, footer
-Build and style homepage front end
-Build and style log log page front end
-Build and style add new log page front end
-Add endpoints
-Implement dynamic data
-Integrate Google Places API 
-Inegrate Leaflet.js Library
-Final polishing
+- Create Client
+- Create server
+- Connect client and server
+- Build framework and styling for navigation, footer
+- Build and style homepage front end
+- Build and style log log page front end
+- Build and style add new log page front end
+- Add endpoints
+- Implement dynamic data
+- Integrate Google Places API 
+- Inegrate Leaflet.js Library
+- Final polishing
 
 
 ## Future Implementations
@@ -214,8 +214,24 @@ Instructions:
 2. Install Client Dependencies
 3. Install Server Dependencies
 4. Set Up Environmental Variables
+5. Obtain the Google Places API Key:
+   - Go to the Google Cloud Console.
+   - Create a new project or use an existing one.
+   - Navigate to APIs & Services > Credentials.
+   - Create an API key and enable the Places API.
+   - Restrict the API key to your application's domain or IP address for security.
 5. Start the Server
 6. Start the Client
 7. Access the Application
 
-.env Example:
+  - Client .env Example:
+  ```
+VITE_API_URL=http://localhost:3030
+VITE_GOOGLE_API_KEY="your-API-key"
+```
+
+  - Server .env Example:
+  ```
+PORT=3030
+GOOGLE_API_KEY="your-API-key"
+```
