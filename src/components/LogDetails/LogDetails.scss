@@ -33,6 +33,7 @@
 
   &__card {
     margin: $padding-standard-mobile;
+    background-color: $color-background-light;
     max-width: 35rem;
     display: flex;
     flex-direction: column;

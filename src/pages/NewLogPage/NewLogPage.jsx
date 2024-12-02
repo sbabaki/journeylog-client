@@ -26,7 +26,7 @@ export default function NewLogPage({ setLogList }) {
   const autocompleteRef = useRef(null);
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyBdkXvPdOX8sdg2ZAsLjWiUHrGeS0Mxt6Y",
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
     libraries,
   });
 
