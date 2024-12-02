@@ -21,7 +21,7 @@ function header() {
           </div>
         </div>
         <div className="header__box2">
-        <div className="header__link-container">
+          <div className="header__link-container">
             <NavLink
               to={"/"}
               className={({ isActive }) =>
@@ -42,16 +42,22 @@ function header() {
             </NavLink>
           </div>
           <div className="header__link-container">
-            <NavLink to={"/new-log"} className={({ isActive }) =>
+            <NavLink
+              to={"/new-log"}
+              className={({ isActive }) =>
                 `header__link ${isActive ? "header__link--active" : ""}`
-              }>
+              }
+            >
               <p className="header__link-text">New Log</p>
             </NavLink>
           </div>
           <div className="header__link-container">
-            <NavLink to={"/journey-map"} className={({ isActive }) =>
+            <NavLink
+              to={"/journey-map"}
+              className={({ isActive }) =>
                 `header__link ${isActive ? "header__link--active" : ""}`
-              }>
+              }
+            >
               <p className="header__link-text">Map</p>
             </NavLink>
           </div>

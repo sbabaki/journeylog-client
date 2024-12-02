@@ -20,7 +20,7 @@ function LogList({ logList }) {
         </NavLink>
       </div>
       <div className="log-list__instr">
-      <p>Select a log below to view its details.</p>
+        <p>Select a log below to view its details.</p>
       </div>
       <ul className="log-list__items">
         {logList.map((log) => (
@@ -32,13 +32,10 @@ function LogList({ logList }) {
             <li className="log-list__item">
               <div className="log-list__item-left">
                 <img
-                  src={
-                    log.cities[0]?.image
-                  }
+                  src={log.cities[0]?.image}
                   alt="Thumbnail for log"
                   className="log-list__thumbnail"
                 />
-                
               </div>
               <div className="log-list__item-right">
                 <p className="log-list__title">{log.name}</p>

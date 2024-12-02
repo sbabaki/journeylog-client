@@ -14,27 +14,40 @@
 }
 
 @mixin button {
-  background: linear-gradient(135deg, $color-text-colored, lighten($color-text-colored, 10%));
+  background: linear-gradient(
+    135deg,
+    $color-text-colored,
+    lighten($color-text-colored, 10%)
+  );
   color: $color-background-light;
   font-size: $font-size-button;
   font-weight: $font-weight-demi;
-  padding: 0.5rem .7rem;
+  padding: 0.5rem 0.7rem;
   border: 2px solid darken($color-background-medium, 10%);
   border-radius: 1.5rem;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:hover {
-    background: linear-gradient(135deg, $color-nav-select, darken($color-nav-select, 10%));
+    background: linear-gradient(
+      135deg,
+      $color-nav-select,
+      darken($color-nav-select, 10%)
+    );
     color: $color-background-light;
     transform: scale(1.02);
   }
 
   &:active {
-    background: linear-gradient(135deg, darken($color-text-colored, 10%), darken($color-nav-select, 10%));
+    background: linear-gradient(
+      135deg,
+      darken($color-text-colored, 10%),
+      darken($color-nav-select, 10%)
+    );
     transform: translateY(2px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
@@ -43,11 +56,11 @@
 @mixin button-cancel {
   @include button;
   color: $color-text-colored;
-  background:none;
+  background: none;
   border: $color-text-colored solid 1px;
   &:hover {
-background: $color-background-medium;
-color: $color-text-colored;
+    background: $color-background-medium;
+    color: $color-text-colored;
   }
 }
 

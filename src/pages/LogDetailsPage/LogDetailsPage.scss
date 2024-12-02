@@ -1,41 +1,36 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-
-
-
 .log-details {
-    @include flex (center, center, column);
+  @include flex(center, center, column);
+  padding: $padding-standard-mobile;
+  background-color: $color-background-medium;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 50rem;
+
+  &__list {
+    @include flex(center, center, column);
     padding: $padding-standard-mobile;
-    background-color: $color-background-medium;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: $color-background-light;
     width: 100%;
-    max-width: 50rem;
-
-
-    &__list {
-        @include flex (center, center, column);
-        padding: $padding-standard-mobile;
-        background-color: $color-background-light;
-        width: 100%;
-        @include tablet {
-            padding: $padding-standard-tablet;
-        }
-        @include desktop {
-            padding: $padding-standard-desktop;
-          }
+    @include tablet {
+      padding: $padding-standard-tablet;
     }
-
-    &__details {
-        @include flex (center, center, column);
-        width: 100%;
-        padding: $padding-standard-mobile;
-        padding-bottom: 3rem;
-        @include tablet {
-            padding: $padding-standard-tablet;
-            padding-bottom: 5rem;
-        }
+    @include desktop {
+      padding: $padding-standard-desktop;
     }
+  }
 
+  &__details {
+    @include flex(center, center, column);
+    width: 100%;
+    padding: $padding-standard-mobile;
+    padding-bottom: 3rem;
+    @include tablet {
+      padding: $padding-standard-tablet;
+      padding-bottom: 5rem;
+    }
+  }
 }

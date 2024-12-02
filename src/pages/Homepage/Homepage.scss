@@ -26,25 +26,23 @@
 
   &__content {
     position: absolute;
-    @include flex (center, left, column);
+    @include flex(center, left, column);
     padding-left: $padding-standard-mobile;
     width: 100%;
     max-width: 10rem;
-@include tablet{
-  padding-left: 5rem;
-  max-width: 25rem;
-}
-@include desktop {
-  padding-left: 15rem;
-  max-width: 45rem;
-}
+    @include tablet {
+      padding-left: 5rem;
+      max-width: 25rem;
+    }
+    @include desktop {
+      padding-left: 15rem;
+      max-width: 45rem;
+    }
   }
 
   &__title {
     color: white;
-    
   }
-  
 
   &__button {
     @include button;
@@ -84,10 +82,10 @@
     margin: $padding-standard-mobile;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%; 
-    height: auto; 
-    max-width: 15rem; 
-    min-height: 15rem; 
+    width: 100%;
+    height: auto;
+    max-width: 15rem;
+    min-height: 15rem;
   }
 
   &__icon {

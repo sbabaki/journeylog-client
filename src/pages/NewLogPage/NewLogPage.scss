@@ -1,18 +1,16 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-
 .new-log-bkgrnd {
-    background-color: $color-background-medium;
-    padding: $padding-standard-mobile;
-    @include flex (center, center);
-    @include tablet {
-      padding: $padding-standard-tablet;
-    }
-    @include desktop {
-      padding: $padding-standard-desktop;
-    }
-    
+  background-color: $color-background-medium;
+  padding: $padding-standard-mobile;
+  @include flex(center, center);
+  @include tablet {
+    padding: $padding-standard-tablet;
+  }
+  @include desktop {
+    padding: $padding-standard-desktop;
+  }
 }
 
 .new-log-container {
@@ -22,7 +20,7 @@
   width: 95%;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  @include flex (center, center);
+  @include flex(center, center);
   @include tablet {
     height: 40rem;
   }
@@ -37,7 +35,7 @@
   }
 
   &__cities-header {
-    @include flex (space-between, center);
+    @include flex(space-between, center);
     padding-block: $padding-standard-mobile;
   }
 
@@ -83,7 +81,6 @@
 
   &__submit-btn {
     @include button;
-
   }
   &__cancel-btn {
     @include button-cancel;

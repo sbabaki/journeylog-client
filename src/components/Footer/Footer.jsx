@@ -1,11 +1,10 @@
-import "./Footer.scss"
-import Logo from "../../assets/logo/journeylog-logo.png"
+import "./Footer.scss";
+import Logo from "../../assets/logo/journeylog-logo.png";
 
-import React from 'react'
+import React from "react";
 
 export default function Footer() {
   return (
-
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__brand">
@@ -14,13 +13,19 @@ export default function Footer() {
         </div>
         <div className="footer__links">
           <div>
-          <a href="/" className="footer__link">About</a>
+            <a href="/" className="footer__link">
+              About
+            </a>
           </div>
           <div>
-          <a href="/" className="footer__link">Contact</a>
+            <a href="/" className="footer__link">
+              Contact
+            </a>
           </div>
           <div>
-          <a href="/" className="footer__link">Privacy Policy</a>
+            <a href="/" className="footer__link">
+              Privacy Policy
+            </a>
           </div>
         </div>
       </div>
@@ -28,6 +33,5 @@ export default function Footer() {
         <p>&copy; 2024 JourneyLog. All rights reserved.</p>
       </div>
     </footer>
-  )
-
+  );
 }

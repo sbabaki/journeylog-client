@@ -2,33 +2,33 @@
 @use "../../styles/partials/variables" as *;
 
 .leaflet-container {
-    height: 100vh;
+  height: 100vh;
 }
 
 .journey-map {
+  @include tablet {
+    padding: $padding-standard-tablet;
+  }
+  @include desktop {
+    padding-bottom: $padding-standard-desktop;
+  }
+
+  &__header {
+    text-align: center;
+    padding: $padding-standard-mobile;
     @include tablet {
-            padding: $padding-standard-tablet;
+      padding-bottom: $padding-standard-tablet;
     }
-    @include desktop {
-        padding-bottom: $padding-standard-desktop;
-    }
+  }
 
-    &__header {
-        text-align: center;
-        padding: $padding-standard-mobile;
-        @include tablet {
-            padding-bottom: $padding-standard-tablet;
-        }
+  &__map-container {
+    @include tablet {
+      width: 100%;
+      height: 70vh;
+      border: 1px solid $color-nav-select;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-
-    &__map-container {
-        @include tablet{
-        width: 100%;
-    height: 70vh;
-    border: 1px solid $color-nav-select;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-    }
+  }
 }

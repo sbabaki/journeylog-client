@@ -7,7 +7,7 @@
   color: $color-text-colored;
   padding: $padding-standard-mobile;
   text-align: center;
-  @include flex (center, center, column);
+  @include flex(center, center, column);
   @include tablet {
     padding-inline: $padding-standard-tablet;
   }

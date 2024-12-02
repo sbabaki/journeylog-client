@@ -9,7 +9,6 @@ export default function LogDetailsPage() {
   const [logList, setLogList] = useState([]);
   const [currentLog, setCurrentLog] = useState(null);
   const { logId } = useParams();
-  console.log("logId from URL:", logId);
   const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
@@ -18,17 +17,13 @@ export default function LogDetailsPage() {
         const response = await axios.get(`${apiUrl}/your-logs`);
         const data = response.data;
         setLogList(data);
-  
         const selectedLog = data.find((log) => log.id === logId);
-        console.log("logId from URL:", logId);
-        console.log("Logs fetched from backend:", data);
         setCurrentLog(selectedLog || null);
-        console.log("Current Log Details:", selectedLog);
       } catch (error) {
         console.error("Error fetching logs:", error);
       }
     }
-  
+
     fetchLogs();
   }, [apiUrl, logId]);
 
@@ -43,7 +38,13 @@ export default function LogDetailsPage() {
       </div>
       <div className="log-details__details">
         {currentLog ? (
-          <LogDetails name={currentLog.name} cities={currentLog.cities} startDate={currentLog.startDate} endDate={currentLog.endDate} note={currentLog.note} />
+          <LogDetails
+            name={currentLog.name}
+            cities={currentLog.cities}
+            startDate={currentLog.startDate}
+            endDate={currentLog.endDate}
+            note={currentLog.note}
+          />
         ) : (
           ""
         )}

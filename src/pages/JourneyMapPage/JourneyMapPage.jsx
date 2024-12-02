@@ -21,14 +21,10 @@ export default function JourneyMapPage() {
       try {
         const response = await axios.get(`${apiUrl}/journey-map`);
         const data = response.data;
-        console.log("Fetched data from backend:", data);
-
         const allCoordinates = data.map((city) => ({
           id: city.city,
           position: [city.coordinates.latitude, city.coordinates.longitude],
         }));
-
-        console.log("Transformed coordinates:", allCoordinates);
 
         if (allCoordinates.length > 0) {
           setCoordinates(allCoordinates);
