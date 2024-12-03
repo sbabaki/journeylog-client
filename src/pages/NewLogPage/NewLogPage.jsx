@@ -26,9 +26,13 @@ export default function NewLogPage({ setLogList }) {
   const autocompleteRef = useRef(null);
 
   const { isLoaded } = useJsApiLoader({
-    googleApiKey: import.meta.env.VITE_GOOGLE_API_KEY,
+    googleMapsApiKey: "AIzaSyBdkXvPdOX8sdg2ZAsLjWiUHrGeS0Mxt6Y",
     libraries,
   });
+
+  if (!isLoaded) {
+    return <div>Loading Google Maps...</div>;
+  }
 
   const handlePlaceChanged = () => {
     const place = autocompleteRef.current.getPlace();
