@@ -8,6 +8,7 @@
 .journey-map {
   @include tablet {
     padding: $padding-standard-tablet;
+    @include flex(center, center, column);
   }
   @include desktop {
     padding-bottom: $padding-standard-desktop;
@@ -29,6 +30,9 @@
       border-radius: 0.5rem;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      @include desktop {
+        width: 80%;
+      }
     }
   }
 }

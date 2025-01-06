@@ -107,6 +107,9 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    @include tablet {
+      padding-block: .4rem;
+    }
   }
 
   &__calendar-icon {
@@ -123,5 +126,8 @@
   &__card-bottom {
     padding: $padding-standard-mobile;
     background-color: $color-background-light;
+    @include tablet {
+      padding: $padding-standard-tablet;
+    }
   }
 }

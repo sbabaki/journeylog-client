@@ -18,11 +18,11 @@
   background-color: $color-background-light;
   padding: $padding-standard-mobile;
   width: 95%;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   @include flex(center, center);
   @include tablet {
-    height: 40rem;
+    height: 45rem;
   }
 }
 
@@ -49,6 +49,11 @@
     width: 100%;
   }
 
+  &__label {
+    @include desktop;
+    font-size: 1.2rem;
+  }
+
   &__input-container {
     width: 100%;
   }
@@ -63,7 +68,9 @@
     @include global;
 
     &::placeholder {
-      @include global;
+      @include desktop {
+        font-size: 1.1rem;
+      }
     }
 
     &--notes {
@@ -85,4 +92,31 @@
   &__cancel-btn {
     @include button-cancel;
   }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal__content {
+  @include flex (center, center, column);
+  gap: 1.5rem;
+  background-color: #fff;
+  padding: $padding-standard-tablet;
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal__close-btn {
+  @include button;
 }

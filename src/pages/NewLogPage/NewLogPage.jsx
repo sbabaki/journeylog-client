@@ -19,7 +19,7 @@ export default function NewLogPage({ setLogList }) {
     latitude: null,
     longitude: null,
   });
-  const [successMessage, setSuccessMessage] = useState("");
+  const [successModal, setSuccessModal] = useState("");
 
   const navigate = useNavigate();
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -45,17 +45,23 @@ export default function NewLogPage({ setLogList }) {
     }
   };
 
+  const closeModal = () => {
+    setSuccessModal("");
+    navigate("/your-logs");
+  };
+
   const handleOnSubmit = async (event) => {
     event.preventDefault();
-    if (!city || !logName || !startDate || !endDate) {
-      alert("Please fill out all fields.");
+    if (!logName || !city || !startDate || !endDate) {
+      alert("Please fill out all required fields.");
       return;
     }
+
     const logData = {
       name: logName,
       cities: [
         {
-          city: city,
+          city,
           coordinates,
           startDate,
           endDate,
@@ -66,13 +72,28 @@ export default function NewLogPage({ setLogList }) {
 
     try {
       const response = await axios.post(`${apiUrl}/your-logs`, logData);
-      alert(`Your log has been created!`);
-      navigate("/your-logs");
-    } catch (error) {}
+      setSuccessModal("Your log has been created successfully!");
+    } catch (error) {
+      alert("Failed to create log. Please try again.");
+    }
   };
+
+
+  
 
   return (
     <div className="new-log-bkgrnd">
+      {successModal && (
+        <div className="modal">
+          <div className="modal__content">
+            <p>{successModal}</p>
+            <button className="modal__close-btn" onClick={closeModal}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
       <div className="new-log-container">
         <div className="new-log">
           <h1 className="new-log__title">New Log</h1>
@@ -83,7 +104,9 @@ export default function NewLogPage({ setLogList }) {
           >
             <div className="new-log__label-field">
               <div className="new-log__label-container">
-                <label htmlFor="log-name">Log Name:</label>
+                <label className="new-log__label" htmlFor="log-name">
+                  Log Name:
+                </label>
               </div>
               <div className="new-log__input-container">
                 <input
@@ -102,12 +125,11 @@ export default function NewLogPage({ setLogList }) {
             <div className="new-log__cities-header">
               <h2>Add Your First City</h2>
             </div>
-            {successMessage && (
-              <p className="new-log__success">{successMessage}</p>
-            )}
             <div className="new-log__label-field">
               <div className="new-log__label-container">
-                <label htmlFor="city-name">City Name:</label>
+                <label className="new-log__label" htmlFor="city-name">
+                  City Name:
+                </label>
               </div>
               <div className="new-log__input-container">
                 <Autocomplete
@@ -145,7 +167,9 @@ export default function NewLogPage({ setLogList }) {
 
             <div className="new-log__label-field">
               <div className="new-log__label-container">
-                <label htmlFor="start-date">Start Date:</label>
+                <label className="new-log__label" htmlFor="start-date">
+                  Start Date:
+                </label>
               </div>
               <div className="new-log__input-container">
                 <DatePicker
@@ -162,7 +186,9 @@ export default function NewLogPage({ setLogList }) {
 
             <div className="new-log__label-field">
               <div className="new-log__label-container">
-                <label htmlFor="end-date">End Date:</label>
+                <label className="new-log__label" htmlFor="end-date">
+                  End Date:
+                </label>
               </div>
               <div className="new-log__input-container">
                 <DatePicker

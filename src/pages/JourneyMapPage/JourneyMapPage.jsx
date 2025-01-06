@@ -8,7 +8,7 @@ import Logo from "../../assets/logo/logo.png";
 
 const customIcon = new Icon({
   iconUrl: Logo,
-  iconSize: [25, 25],
+  iconSize: [38, 38],
 });
 
 export default function JourneyMapPage() {
@@ -45,7 +45,7 @@ export default function JourneyMapPage() {
         <p>Find your journey pins below!</p>
       </div>
       <div className="journey-map__map-container">
-        <MapContainer className="journey-map__map" center={[12, 104]} zoom={2}>
+        <MapContainer className="journey-map__map" center={[2, 46]} zoom={2}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"

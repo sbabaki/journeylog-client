@@ -51,6 +51,9 @@
     transform: translateY(2px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
+  @include tablet {
+    font-size: 1rem
+  }
 }
 
 @mixin button-cancel {
@@ -70,7 +73,11 @@
 
 @mixin logo {
   width: 7rem;
+  @include desktop{
+    width: 10rem;
+  }
 }
+
 
 @mixin flex($justify: flex-start, $align: flex-start, $direction: row) {
   display: flex;

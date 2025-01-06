@@ -23,6 +23,9 @@
   &__instr {
     padding: 0 0 $padding-standard-mobile $padding-standard-mobile;
     width: 100%;
+    @include tablet {
+      padding-bottom: $padding-standard-tablet;
+    }
   }
 
   &__h2 {
