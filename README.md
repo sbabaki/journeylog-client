@@ -79,7 +79,9 @@ GOOGLE_API_KEY=your-google-api-key
 npm start
 ```
 
-6. Access the Application
+6.6. Ensure [Backend Repository](https://github.com/sbabaki/journeylog-server) is Set Up
+
+7. Access the Application
 
 
 ## Future Implementations
