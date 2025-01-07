@@ -9,7 +9,7 @@ import { useJsApiLoader, Autocomplete } from "@react-google-maps/api";
 
 const libraries = ["places"];
 
-export default function NewLogPage({ setLogList }) {
+export default function NewLogPage() {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [city, setCity] = useState("");
@@ -26,7 +26,7 @@ export default function NewLogPage({ setLogList }) {
   const autocompleteRef = useRef(null);
 
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyBdkXvPdOX8sdg2ZAsLjWiUHrGeS0Mxt6Y",
+    googleMapsApiKey: import.meta.env.VITE_GOOGLE_API_KEY,
     libraries,
   });
 
@@ -77,9 +77,6 @@ export default function NewLogPage({ setLogList }) {
       alert("Failed to create log. Please try again.");
     }
   };
-
-
-  
 
   return (
     <div className="new-log-bkgrnd">

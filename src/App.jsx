@@ -1,5 +1,4 @@
 import "./App.scss";
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/header";
 import Footer from "./components/Footer/Footer";
